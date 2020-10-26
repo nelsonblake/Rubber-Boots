@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Underpass.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Music/Left_Foot_Pavement.wav" type="AudioStream" id=6]
 [ext_resource path="res://Backgrounds/underpass upscale.png" type="Texture" id=7]
 [ext_resource path="res://Music/Right_Foot_Pavement.wav" type="AudioStream" id=8]
+[ext_resource path="res://CarTrunkArea.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.1598, 11.929 )
@@ -156,8 +157,28 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.9 )
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "LightsBlink"
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 300.822, 16.2705 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 375.157, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 21.7493, 171.241 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.1898, 79.8965 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 33.7186, 43.3585 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 60.1769, 36.4293 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 16.0797, 45.8787 )
+
+[sub_resource type="Animation" id=12]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -185,37 +206,13 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 50.7275, 33.9095 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 300.822, 16.2705 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 375.157, 10 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 21.7493, 171.241 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 14.1898, 79.8965 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 33.7186, 43.3585 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 60.1769, 36.4293 )
-
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 16.0797, 45.8787 )
-
-[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 28, 31 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 42, 43 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Out:modulate")
@@ -230,8 +227,29 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 0.545098 ), Color( 1, 1, 1, 0.768627 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "introFade"
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 49.008, 31.5077 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 33.8889, 40.9572 )
+
+[sub_resource type="Animation" id=18]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Out:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.207843 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0.741176 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
@@ -285,6 +303,38 @@ stream = ExtResource( 8 )
 [node name="Camera2D" type="Camera2D" parent="Underpass/Player"]
 current = true
 
+[node name="CollisionBoxes" type="StaticBody2D" parent="Underpass"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 385.963, 429.915 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 389.113, 602.524 )
+shape = SubResource( 6 )
+
+[node name="Right edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 747.56, 467.083 )
+rotation = -0.253073
+shape = SubResource( 7 )
+
+[node name="Left edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 5.46692, 522.519 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 702.833, 402.197 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 65.9429, 405.347 )
+shape = SubResource( 10 )
+
+[node name="Left edge 2" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 19.3259, 462.043 )
+rotation = 0.507891
+shape = SubResource( 11 )
+
 [node name="CarLightLeft" type="ColorRect" parent="Underpass"]
 margin_left = 385.42
 margin_top = 440.0
@@ -304,43 +354,7 @@ __meta__ = {
 }
 
 [node name="LightsBlink" type="AnimationPlayer" parent="Underpass"]
-anims/LightsBlink = SubResource( 5 )
-
-[node name="CollisionBoxes" type="StaticBody2D" parent="Underpass"]
-
-[node name="Car" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 359.505, 436.845 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 385.963, 429.915 )
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 389.113, 602.524 )
-shape = SubResource( 8 )
-
-[node name="Right edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 747.56, 467.083 )
-rotation = -0.253073
-shape = SubResource( 9 )
-
-[node name="Left edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 5.46692, 522.519 )
-shape = SubResource( 10 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 702.833, 402.197 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 65.9429, 405.347 )
-shape = SubResource( 12 )
-
-[node name="Left edge 2" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
-position = Vector2( 19.3259, 462.043 )
-rotation = 0.507891
-shape = SubResource( 13 )
+anims/LightsBlink = SubResource( 12 )
 
 [node name="Deer" type="RigidBody2D" parent="Underpass"]
 mode = 1
@@ -349,17 +363,17 @@ contact_monitor = true
 
 [node name="Deer" type="CollisionShape2D" parent="Underpass/Deer"]
 position = Vector2( 633, 532 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="Deer Area" type="Area2D" parent="Underpass/Deer"]
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Underpass/Deer/Deer Area"]
 position = Vector2( 632, 531 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 
 [node name="Fade" type="AnimationPlayer" parent="Underpass/Deer/Deer Area"]
-anims/fade = SubResource( 16 )
+anims/fade = SubResource( 15 )
 
 [node name="Out" type="ColorRect" parent="Underpass/Deer/Deer Area"]
 modulate = Color( 1, 1, 1, 0 )
@@ -367,6 +381,36 @@ margin_left = -378.253
 margin_top = -192.335
 margin_right = 1471.75
 margin_bottom = 1715.66
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Car" type="RigidBody2D" parent="Underpass"]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+
+[node name="Car" type="CollisionShape2D" parent="Underpass/Car"]
+position = Vector2( 356.369, 435.757 )
+shape = SubResource( 16 )
+
+[node name="CarTrunkArea" type="Area2D" parent="Underpass/Car/Car"]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Underpass/Car/Car/CarTrunkArea"]
+position = Vector2( 29.6082, 9.4494 )
+shape = SubResource( 17 )
+
+[node name="Fade" type="AnimationPlayer" parent="Underpass/Car/Car/CarTrunkArea"]
+anims/fade = SubResource( 18 )
+
+[node name="Out" type="ColorRect" parent="Underpass/Car/Car/CarTrunkArea"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -466.0
+margin_top = -477.0
+margin_right = 580.0
+margin_bottom = 480.0
 color = Color( 0.027451, 0.0941176, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -383,7 +427,8 @@ __meta__ = {
 }
 
 [node name="IntroFade" type="AnimationPlayer" parent="Underpass"]
-anims/introFade = SubResource( 17 )
+anims/introFade = SubResource( 19 )
 [connection signal="body_entered" from="Underpass/Deer" to="Underpass/Deer/Deer Area" method="_on_Deer_body_entered"]
 [connection signal="input_event" from="Underpass/Deer" to="Underpass/Deer/Deer" method="_on_Deer_input_event"]
 [connection signal="body_entered" from="Underpass/Deer/Deer Area" to="Underpass/Player" method="_on_Deer_Area_body_entered"]
+[connection signal="body_entered" from="Underpass/Car/Car/CarTrunkArea" to="Underpass/Player" method="_on_Car_Area_body_entered"]
