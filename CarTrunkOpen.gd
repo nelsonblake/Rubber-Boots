@@ -44,4 +44,4 @@ func onTimeout3():
 	timer4.start()
 	
 func onTimeout4():
-	get_tree().change_scene("res://Scenes/UnderpassStart.tscn")
+	get_tree().change_scene("res://Scenes/UnderpassTrunkOpen.tscn")
