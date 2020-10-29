@@ -3,6 +3,7 @@ extends Node2D
 onready var playerPosition = get_node("/root/Game/Underpass/Player")
 
 func _ready():
+	Main.TrunkIsOpen == true
 	$IntroFade.play("introFade")
 	if Main.hasKeys == false:
 		$LightsBlink.play("LightsBlink")

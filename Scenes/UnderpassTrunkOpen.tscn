@@ -7,7 +7,7 @@
 [ext_resource path="res://Characters/player upscaled.png" type="Texture" id=5]
 [ext_resource path="res://CarDriverSide.gd" type="Script" id=6]
 [ext_resource path="res://Backgrounds/underpass trunk open upscale.png" type="Texture" id=7]
-[ext_resource path="res://CarTrunkArea.gd" type="Script" id=9]
+[ext_resource path="res://CarTrunkAreaOpen.gd" type="Script" id=8]
 [ext_resource path="res://Music/Left Step Pavement (barefoot).wav" type="AudioStream" id=10]
 [ext_resource path="res://Music/Right Step Pavement (barefoot).wav" type="AudioStream" id=11]
 
@@ -400,7 +400,7 @@ position = Vector2( 356.369, 435.757 )
 shape = SubResource( 16 )
 
 [node name="CarTrunkArea" type="Area2D" parent="Underpass/Car/Car"]
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CarTrunkArea" type="CollisionShape2D" parent="Underpass/Car/Car/CarTrunkArea"]
 position = Vector2( 35, 9.449 )
