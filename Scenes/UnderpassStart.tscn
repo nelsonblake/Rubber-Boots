@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Underpass.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
 [ext_resource path="res://DeerSceneChange.gd" type="Script" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
 [ext_resource path="res://Characters/player upscaled.png" type="Texture" id=5]
+[ext_resource path="res://CarDriverSide.gd" type="Script" id=6]
 [ext_resource path="res://Backgrounds/underpass upscale.png" type="Texture" id=7]
 [ext_resource path="res://CarTrunkArea.gd" type="Script" id=9]
 [ext_resource path="res://Music/Left Step Pavement (barefoot).wav" type="AudioStream" id=10]
@@ -188,7 +189,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CarLightRight:modulate")
@@ -200,7 +201,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -231,7 +232,7 @@ extents = Vector2( 49.008, 31.5077 )
 extents = Vector2( 33.8889, 40.9572 )
 
 [sub_resource type="Animation" id=18]
-resource_name = "fade"
+resource_name = "fade2"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Out:modulate")
@@ -246,7 +247,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.207843 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0.741176 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 35.9452, 46.2152 )
+
+[sub_resource type="Animation" id=20]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
@@ -334,6 +338,7 @@ rotation = 0.507891
 shape = SubResource( 11 )
 
 [node name="CarLightLeft" type="ColorRect" parent="Underpass"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 385.42
 margin_top = 440.0
 margin_right = 398.42
@@ -343,6 +348,7 @@ __meta__ = {
 }
 
 [node name="CarLightRight" type="ColorRect" parent="Underpass"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 358.0
 margin_top = 440.0
 margin_right = 372.0
@@ -396,8 +402,8 @@ shape = SubResource( 16 )
 [node name="CarTrunkArea" type="Area2D" parent="Underpass/Car/Car"]
 script = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Underpass/Car/Car/CarTrunkArea"]
-position = Vector2( 29.6082, 9.4494 )
+[node name="CarTrunkArea" type="CollisionShape2D" parent="Underpass/Car/Car/CarTrunkArea"]
+position = Vector2( 35, 9.449 )
 shape = SubResource( 17 )
 
 [node name="Fade" type="AnimationPlayer" parent="Underpass/Car/Car/CarTrunkArea"]
@@ -414,6 +420,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CarDriverSide" type="Area2D" parent="Underpass/Car/Car"]
+position = Vector2( -250.536, -374.651 )
+script = ExtResource( 6 )
+
+[node name="CarDriverSide" type="CollisionShape2D" parent="Underpass/Car/Car/CarDriverSide"]
+position = Vector2( 195, 375.976 )
+shape = SubResource( 19 )
+
+[node name="Fade" type="AnimationPlayer" parent="Underpass/Car/Car/CarDriverSide"]
+anims/fade2 = SubResource( 18 )
+
+[node name="Out" type="ColorRect" parent="Underpass/Car/Car/CarDriverSide"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -253.0
+margin_top = -113.0
+margin_right = 944.0
+margin_bottom = 957.0
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect" type="ColorRect" parent="Underpass"]
 margin_left = -215.0
 margin_top = -206.0
@@ -425,4 +453,4 @@ __meta__ = {
 }
 
 [node name="IntroFade" type="AnimationPlayer" parent="Underpass"]
-anims/introFade = SubResource( 19 )
+anims/introFade = SubResource( 20 )

@@ -12,7 +12,7 @@ func get_input(_delta):
 		#if the player is inside the area near the deer and press accept, it will fade out and change scenes
 			if body.name == "Player" and Input.is_action_pressed("ui_accept"):
 				if $Fade.get_current_animation_length() == 0:
-					$Fade.play("fade")
+					$Fade.play("fade2")
 
 #Starts a timer for after the animation finishes
 func onFadeOutFinish(_ani):
@@ -28,7 +28,7 @@ func onTimeout():
 	
 # Function to change scene, just replace Deer with whatever scene
 func changeScene():
-		get_tree().change_scene("res://Scenes/CarTrunk.tscn")
+		get_tree().change_scene("res://Scenes/CarDriverSide.tscn")
 		
 func _physics_process(delta):
 		get_input(delta)

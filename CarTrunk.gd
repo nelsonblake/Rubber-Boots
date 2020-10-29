@@ -5,23 +5,32 @@ extends Node2D
 var timer = Timer.new()
 var timer2 = Timer.new()
 var animation = null
-var textFlag = false
+#Stops the player from spamming enter to repeat the textbox animation
+var textFlag = false 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Fade.play("FadeIn")
 	$Lights.play_backwards("fadeOut")
 	animation = $TextPop.get_animation_list()[0]
+	var textFlag = false 
 
 func get_input(_delta):
-	if $Fade.get_current_animation() != "FadeIn":
+	if $Fade.get_current_animation() != "FadeIn" and Main.hasKeys == false:
 		$Lights.play("Lights")
-		if Input.is_action_pressed("ui_accept") and textFlag == false:
-			$TextPop.play("TextPop")
-			textFlag = true
+	elif $Fade.get_current_animation() != "FadeIn" and Main.hasKeys == true:
+		$Left.hide()
+		$Right.hide()
+	if Input.is_action_pressed("ui_accept") and textFlag == false and Main.hasKeys == false:
+		$TextPop.play("TextPop")
+		textFlag = true
+	if Input.is_action_pressed("ui_accept") and textFlag == false and Main.hasKeys == true:
+		textFlag == true
+		get_tree().change_scene("res://Scenes/CarTrunkOpen.tscn")
 			
 func _physics_process(delta):
 		get_input(delta)
+
 
 func _on_TextPop_animation_finished(animation):
 	timer.connect("timeout", self, "onTimeout") 
@@ -34,14 +43,17 @@ func onTimeout():
 	$Lights.play("fadeOut")
 	$TextPop.play("fadeOut")
 	$Fade.play_backwards("FadeIn")
-	timer2.connect("timeout", self, "onTimeout2") 
+	timer2.connect("timeout", self, "onTimeoutTimeout") 
 	add_child(timer2)
 	timer2.set_one_shot(true)
 	timer2.start()
 
-func onTimeout2():
+func onTimeoutTimeout():
 	$Lights.stop(false)
 	$TextPop.stop(false)
-	get_tree().change_scene("res://Scenes/UnderpassStart.tscn")
+	if Main.hasKeys == false:
+		get_tree().change_scene("res://Scenes/UnderpassStart.tscn")
+
+
 
 
