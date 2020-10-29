@@ -48,7 +48,7 @@ tracks/1/keys = {
 "values": [ "", "", "I", "It", "It'", "It's ", "It's L", "It's Lo", "It's Loc", "It's Lock", "It's Locke", "It's Locked", "It's Locked." ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "fadeOut"
 length = 0.8
 tracks/0/type = "value"
@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "fadeOut"
 length = 0.8
 tracks/0/type = "value"
@@ -121,7 +121,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0.156863 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 3 )
 
@@ -140,16 +140,18 @@ anims/FadeIn = SubResource( 1 )
 
 [node name="TextPop" type="AnimationPlayer" parent="."]
 anims/TextPop = SubResource( 2 )
-anims/fadeOut = SubResource( 5 )
+anims/fadeOut = SubResource( 3 )
 
 [node name="Lights" type="AnimationPlayer" parent="."]
 anims/Lights = SubResource( 4 )
-anims/fadeOut = SubResource( 6 )
+anims/fadeOut = SubResource( 5 )
 
 [node name="Left" type="Polygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 112.591, 401.001, 237.591, 402.001, 256.621, 420.984, 255.591, 465.001, 238.641, 486.535, 109.591, 485.001, 92.5913, 466.001, 91.5913, 420.001 )
 
 [node name="Right" type="Polygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 531.591, 402.001, 662.591, 402.001, 675.591, 420.001, 677.591, 466.001, 661.591, 486.001, 533.591, 485.001, 514.704, 464.435, 515.591, 420.001 )
 
 [node name="TextEdit" type="TextEdit" parent="."]
@@ -157,7 +159,7 @@ modulate = Color( 1, 1, 1, 0 )
 margin_top = 433.0
 margin_right = 623.0
 margin_bottom = 633.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
