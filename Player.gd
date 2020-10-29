@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 50  # speed in pixels/sec
+var speed = 40  # speed in pixels/sec
 var velocity = Vector2.ZERO
 var screen_size # size of the game window
 var inside = false

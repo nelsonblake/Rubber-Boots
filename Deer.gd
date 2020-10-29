@@ -9,7 +9,7 @@ var timer2 = Timer.new()
 func _ready():
 	$Fade.connect("animation_finished", self, "onTimeout2")
 	timer.set_one_shot(true)
-	timer.set_wait_time(5)
+	timer.set_wait_time(3)
 	timer.connect("timeout", self, "onTimeout")
 	add_child(timer)
 	timer.start()
@@ -17,11 +17,11 @@ func _ready():
 
 func onTimeout():
 	$Fade.play_backwards("FadeIn")
-	timer.set_one_shot(true)
-	timer.set_wait_time(2)
-	timer.connect("timeout", self, "onTimeout2")
-	add_child(timer)
-	timer.start()
+	timer2.set_one_shot(true)
+	timer2.set_wait_time(1)
+	timer2.connect("timeout", self, "onTimeout2")
+	add_child(timer2)
+	timer2.start()
 
 func onTimeout2():
 	get_tree().change_scene("res://Scenes/UnderpassStart.tscn")

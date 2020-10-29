@@ -5,16 +5,15 @@
 [ext_resource path="res://DeerSceneChange.gd" type="Script" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
 [ext_resource path="res://Characters/player upscaled.png" type="Texture" id=5]
-[ext_resource path="res://Music/Left_Foot_Pavement.wav" type="AudioStream" id=6]
 [ext_resource path="res://Backgrounds/underpass upscale.png" type="Texture" id=7]
-[ext_resource path="res://Music/Right_Foot_Pavement.wav" type="AudioStream" id=8]
 [ext_resource path="res://CarTrunkArea.gd" type="Script" id=9]
+[ext_resource path="res://Music/Left Step Pavement (barefoot).wav" type="AudioStream" id=10]
+[ext_resource path="res://Music/Right Step Pavement (barefoot).wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.1598, 11.929 )
 
 [sub_resource type="Animation" id=2]
-length = 1.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:hframes")
@@ -35,7 +34,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.9 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 1 ]
@@ -50,7 +49,7 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 10 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -64,13 +63,12 @@ tracks/3/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 11 )
 } ],
-"times": PoolRealArray( 0.9 )
+"times": PoolRealArray( 0.5 )
 }
 
 [sub_resource type="Animation" id=3]
-length = 1.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -79,7 +77,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 4, 5 ]
@@ -94,7 +92,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 10 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -108,13 +106,12 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 11 )
 } ],
-"times": PoolRealArray( 0.9 )
+"times": PoolRealArray( 0.5 )
 }
 
 [sub_resource type="Animation" id=4]
-length = 1.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -123,7 +120,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 2, 3 ]
@@ -138,7 +135,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 10 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -152,9 +149,9 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 11 )
 } ],
-"times": PoolRealArray( 0.9 )
+"times": PoolRealArray( 0.5 )
 }
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -213,7 +210,7 @@ extents = Vector2( 28, 31 )
 extents = Vector2( 42, 43 )
 
 [sub_resource type="Animation" id=15]
-length = 2.0
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Out:modulate")
 tracks/0/interp = 1
@@ -221,7 +218,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 1.9, 3, 3.5, 4, 4.5, 5 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 3, 3.5, 4, 4.5, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 0.545098 ), Color( 1, 1, 1, 0.768627 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -235,7 +232,7 @@ extents = Vector2( 33.8889, 40.9572 )
 
 [sub_resource type="Animation" id=18]
 resource_name = "fade"
-length = 2.0
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Out:modulate")
 tracks/0/interp = 1
@@ -243,14 +240,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.207843 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0.741176 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=19]
-length = 2.0
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
@@ -258,7 +255,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.776471 ), Color( 1, 1, 1, 0.513726 ), Color( 1, 1, 1, 0.270588 ), Color( 1, 1, 1, 0 ) ]
@@ -286,6 +283,7 @@ shape = SubResource( 1 )
 position = Vector2( 0.629974, -10.7094 )
 texture = ExtResource( 5 )
 hframes = 6
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Underpass/Player"]
 anims/down = SubResource( 2 )
@@ -294,11 +292,11 @@ anims/up = SubResource( 4 )
 
 [node name="WalkingLeft" type="AudioStreamPlayer2D" parent="Underpass/Player"]
 position = Vector2( -291.352, -517.548 )
-stream = ExtResource( 6 )
+stream = ExtResource( 10 )
 
 [node name="WalkingRight" type="AudioStreamPlayer2D" parent="Underpass/Player"]
 position = Vector2( -291.352, -517.548 )
-stream = ExtResource( 8 )
+stream = ExtResource( 11 )
 
 [node name="Camera2D" type="Camera2D" parent="Underpass/Player"]
 current = true
@@ -428,7 +426,3 @@ __meta__ = {
 
 [node name="IntroFade" type="AnimationPlayer" parent="Underpass"]
 anims/introFade = SubResource( 19 )
-[connection signal="body_entered" from="Underpass/Deer" to="Underpass/Deer/Deer Area" method="_on_Deer_body_entered"]
-[connection signal="input_event" from="Underpass/Deer" to="Underpass/Deer/Deer" method="_on_Deer_input_event"]
-[connection signal="body_entered" from="Underpass/Deer/Deer Area" to="Underpass/Player" method="_on_Deer_Area_body_entered"]
-[connection signal="body_entered" from="Underpass/Car/Car/CarTrunkArea" to="Underpass/Player" method="_on_Car_Area_body_entered"]
