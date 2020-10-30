@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/right-step-pavement-barefoot.wav-c394c17fc0727523889e3f9d0731b56c.sample"
+
+[deps]
+
+source_file="res://Sounds/SoundEffects/right-step-pavement-barefoot.wav"
+dest_files=[ "res://.import/right-step-pavement-barefoot.wav-c394c17fc0727523889e3f9d0731b56c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

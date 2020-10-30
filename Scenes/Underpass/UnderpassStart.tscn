@@ -1,0 +1,457 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Scripts/Underpass/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Underpass/Underpass.gd" type="Script" id=2]
+[ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Underpass/CarTrunkArea.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Underpass/CarDriverSide.gd" type="Script" id=5]
+[ext_resource path="res://Characters/player.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Underpass/DeerSceneChange.gd" type="Script" id=7]
+[ext_resource path="res://Backgrounds/Underpass/underpass-initial.png" type="Texture" id=8]
+[ext_resource path="res://Sounds/SoundEffects/right-step-pavement-barefoot.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/SoundEffects/left-step-pavement-barefoot.wav" type="AudioStream" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.1598, 11.929 )
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("WalkingLeft")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("WalkingRight")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("WalkingLeft")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("WalkingRight")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+
+[sub_resource type="Animation" id=4]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("WalkingLeft")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("WalkingRight")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 300.822, 16.2705 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 375.157, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 21.7493, 171.241 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.1898, 79.8965 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 33.7186, 43.3585 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 60.1769, 36.4293 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 16.0797, 45.8787 )
+
+[sub_resource type="Animation" id=12]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CarLightLeft:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CarLightRight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 28, 31 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 42, 43 )
+
+[sub_resource type="Animation" id=15]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Out:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 0.545098 ), Color( 1, 1, 1, 0.768627 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 49.008, 31.5077 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 33.8889, 40.9572 )
+
+[sub_resource type="Animation" id=18]
+resource_name = "fade2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Out:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.207843 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0.741176 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 35.9452, 46.2152 )
+
+[sub_resource type="Animation" id=20]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.776471 ), Color( 1, 1, 1, 0.513726 ), Color( 1, 1, 1, 0.270588 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Underpass" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="underpass upscale" type="Sprite" parent="Underpass"]
+position = Vector2( 385.963, 386.448 )
+texture = ExtResource( 8 )
+
+[node name="Player" type="KinematicBody2D" parent="Underpass"]
+position = Vector2( 291.352, 517.548 )
+script = ExtResource( 1 )
+
+[node name="Body" type="CollisionShape2D" parent="Underpass/Player"]
+position = Vector2( -1.60703, 1.81915 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Underpass/Player"]
+position = Vector2( 0.629974, -10.7094 )
+texture = ExtResource( 6 )
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Underpass/Player"]
+anims/down = SubResource( 2 )
+anims/side = SubResource( 3 )
+anims/up = SubResource( 4 )
+
+[node name="WalkingLeft" type="AudioStreamPlayer2D" parent="Underpass/Player"]
+position = Vector2( -291.352, -517.548 )
+stream = ExtResource( 10 )
+bus = "Underpass-Walking"
+
+[node name="WalkingRight" type="AudioStreamPlayer2D" parent="Underpass/Player"]
+position = Vector2( -291.352, -517.548 )
+stream = ExtResource( 9 )
+bus = "Underpass-Walking"
+
+[node name="Camera2D" type="Camera2D" parent="Underpass/Player"]
+current = true
+
+[node name="CollisionBoxes" type="StaticBody2D" parent="Underpass"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 385.963, 429.915 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 389.113, 602.524 )
+shape = SubResource( 6 )
+
+[node name="Right edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 747.56, 467.083 )
+rotation = -0.253073
+shape = SubResource( 7 )
+
+[node name="Left edge" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 5.46692, 522.519 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 702.833, 402.197 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 65.9429, 405.347 )
+shape = SubResource( 10 )
+
+[node name="Left edge 2" type="CollisionShape2D" parent="Underpass/CollisionBoxes"]
+position = Vector2( 19.3259, 462.043 )
+rotation = 0.507891
+shape = SubResource( 11 )
+
+[node name="CarLightLeft" type="ColorRect" parent="Underpass"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 385.42
+margin_top = 440.0
+margin_right = 398.42
+margin_bottom = 447.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CarLightRight" type="ColorRect" parent="Underpass"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 358.0
+margin_top = 440.0
+margin_right = 372.0
+margin_bottom = 447.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LightsBlink" type="AnimationPlayer" parent="Underpass"]
+anims/LightsBlink = SubResource( 12 )
+
+[node name="Deer" type="RigidBody2D" parent="Underpass"]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+
+[node name="Deer" type="CollisionShape2D" parent="Underpass/Deer"]
+position = Vector2( 633, 532 )
+shape = SubResource( 13 )
+
+[node name="Deer Area" type="Area2D" parent="Underpass/Deer"]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Underpass/Deer/Deer Area"]
+position = Vector2( 632, 531 )
+shape = SubResource( 14 )
+
+[node name="Fade" type="AnimationPlayer" parent="Underpass/Deer/Deer Area"]
+anims/fade = SubResource( 15 )
+
+[node name="Out" type="ColorRect" parent="Underpass/Deer/Deer Area"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -378.253
+margin_top = -192.335
+margin_right = 1471.75
+margin_bottom = 1715.66
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Car" type="RigidBody2D" parent="Underpass"]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+
+[node name="Car" type="CollisionShape2D" parent="Underpass/Car"]
+position = Vector2( 356.369, 435.757 )
+shape = SubResource( 16 )
+
+[node name="CarTrunkArea" type="Area2D" parent="Underpass/Car/Car"]
+script = ExtResource( 4 )
+
+[node name="CarTrunkArea" type="CollisionShape2D" parent="Underpass/Car/Car/CarTrunkArea"]
+position = Vector2( 35, 9.449 )
+shape = SubResource( 17 )
+
+[node name="Fade" type="AnimationPlayer" parent="Underpass/Car/Car/CarTrunkArea"]
+anims/fade = SubResource( 18 )
+
+[node name="Out" type="ColorRect" parent="Underpass/Car/Car/CarTrunkArea"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -466.0
+margin_top = -477.0
+margin_right = 580.0
+margin_bottom = 480.0
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CarDriverSide" type="Area2D" parent="Underpass/Car/Car"]
+position = Vector2( -250.536, -374.651 )
+script = ExtResource( 5 )
+
+[node name="CarDriverSide" type="CollisionShape2D" parent="Underpass/Car/Car/CarDriverSide"]
+position = Vector2( 195, 375.976 )
+shape = SubResource( 19 )
+
+[node name="Fade" type="AnimationPlayer" parent="Underpass/Car/Car/CarDriverSide"]
+anims/fade2 = SubResource( 18 )
+
+[node name="Out" type="ColorRect" parent="Underpass/Car/Car/CarDriverSide"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -253.0
+margin_top = -113.0
+margin_right = 944.0
+margin_bottom = 957.0
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Underpass"]
+margin_left = -215.0
+margin_top = -206.0
+margin_right = 1036.0
+margin_bottom = 1001.0
+color = Color( 0.027451, 0.0941176, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroFade" type="AnimationPlayer" parent="Underpass"]
+anims/introFade = SubResource( 20 )

@@ -15,13 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rubber Boots Movement"
-run/main_scene="res://Scenes/UnderpassStart.tscn"
-config/icon="res://icon.png"
+config/name="Rubber Boots"
+run/main_scene="res://Scenes/Underpass/UnderpassStart.tscn"
+config/icon="res://moon-placeholder-logo.png"
 
 [autoload]
 
-Music="*res://Scenes/Music.tscn"
+Music="*res://Scenes/Underpass/Music.tscn"
 Main="*res://Scenes/Main.tscn"
 
 [display]

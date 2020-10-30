@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/streets.wav-97391a919bf2a5b8ce10969e29a18ad7.sample"
+
+[deps]
+
+source_file="res://Sounds/Music/streets.wav"
+dest_files=[ "res://.import/streets.wav-97391a919bf2a5b8ce10969e29a18ad7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
